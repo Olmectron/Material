@@ -1,0 +1,117 @@
+
+                                    final Points puntos=new Points();
+                                    final SRectangle rectangle=new SRectangle();
+    final double maxX = imageView.getImage().getWidth();
+    final double maxY = imageView.getImage().getHeight();
+    
+
+    imageView.setOnMousePressed(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent me) {
+            //System.out.println("Clicked, x:" + me.getSceneX() + " y:" + me.getSceneY());
+            //the event will be passed only to the circle which is on front
+            puntos.setInitX(me.getX());
+            puntos.setInitY(me.getY());
+            rectangle.setMouseEvent(me);
+            rectangle.setImage(imageView.getImage());
+            Rectangle rect=rectangle.getRectangle();
+            if(rect!=null){
+                anchor.getChildren().remove(rect);
+            }
+            rectangle.resetRectangle(puntos.getInitX(), puntos.getInitY());
+            anchor.getChildren().add(rectangle.getRectangle());
+            
+            System.out.println(puntos.getInitX()+", "+puntos.getInitY());
+            me.consume();
+        }
+    });
+    imageView.setOnMouseDragged(new EventHandler<MouseEvent>() {
+        @Override
+        public void handle(MouseEvent me) {
+            //System.out.println("Dragged, x:" + me.getSceneX() + " y:" + me.getSceneY());
+            
+                
+                double initX=puntos.getInitX();
+                double initY=puntos.getInitY();
+                double meX=me.getX();
+                double meY=me.getY();
+                if(meX>maxX){
+                    meX=maxX;
+                }
+                else if(meX<0){
+                    meX=0;
+                }
+                
+                
+                if(meY>maxY){
+                    meY=maxY;
+                }
+                else if(meY<0){
+                    meY=0;
+                }
+                if(initX>maxX){
+                    initX=maxX;
+                }
+                else if(initX<0){
+                    initX=0;
+                }
+                if(initY>maxY){
+                    initY=maxY;
+                }
+                else if(initY<0){
+                    initY=0;
+                }
+                
+                
+                
+                    rectangle.getRectangle().setWidth(meX-initX);
+                    rectangle.getRectangle().setHeight(meX-initX);
+                
+                
+                //Rectangle rectangle=new Rectangle(initX,initY,meX,meY);
+                //Line line=new Line(initX, initY, meX, meY);
+                
+                //anchor.getChildren().add(puntos.getRectangle());
+            
+
+            //puntos.setInitX(me.getX() > maxX ? maxX : me.getX());
+            //puntos.setInitY(me.getY() > maxY ? maxY : me.getY());
+        }
+        
+    });
+    /*Points p=new Points();
+                rectangle.getRectangle().setOnMousePressed(new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                    p.setInitX(event.getX());
+                    p.setInitY(event.getY());
+                }});
+    rectangle.getRectangle().setOnMouseDragged(new EventHandler<MouseEvent>() {
+
+                @Override
+                public void handle(MouseEvent event) {
+                   
+                    rectangle.getRectangle().setX(rectangle.getRectangle().getX()+(event.getX()-p.getInitX()));
+                    rectangle.getRectangle().setY(rectangle.getRectangle().getY()+(event.getY()-p.getInitY()));
+                    double actualX=event.getX();
+                    double actualY=event.getY();
+                    
+                        p.setInitX(actualX);
+                    
+                    
+                        p.setInitY(actualY);
+                    
+                    
+                    
+                }
+            });
+
+      */              
+                    
+                    
+                    
+                    
+                    
+                    
+                    

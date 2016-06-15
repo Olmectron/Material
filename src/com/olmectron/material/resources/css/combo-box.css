@@ -1,0 +1,54 @@
+
+.material-progress-bar .bar {
+    -fx-background-color: rgb(45,137,239);
+    
+	-fx-pref-width:2000;
+	-fx-padding: 2px; 
+    -fx-background-insets: 0; 
+    
+}
+
+.material-progress-bar:indeterminate .bar {  
+    -fx-background-color: rgb(45,137,239);
+    -fx-border-style: none;
+	
+}
+.material-progress-bar.blue:indeterminate .bar {  
+    -fx-background-color: #2196F3;
+    
+}
+.material-progress-bar.amber:indeterminate .bar {  
+    -fx-background-color: #FFC107;
+    
+	
+}
+.material-progress-bar{
+
+-fx-indeterminate-bar-length: 200;
+-fx-indeterminate-bar-flip: false;
+}
+.material-progress-bar .track {
+    -fx-background-color: transparent; 
+	-fx-border-style:none;
+	-fx-background-radius: 0;
+	}
+	.material-progress-bar.blue .track {
+    -fx-background-color: #2196F349; 
+	
+	}
+	.material-progress-bar.amber .track {
+    -fx-background-color: #FFC10749; 
+	
+	}
+.material-standard-progress-bar .bar {
+    -fx-background-color: rgb(45,137,239);
+    -fx-background-insets: 3;
+    -fx-padding: 1em;
+}
+.mmaterial-standard-progress-bar:indeterminate .bar {  
+    -fx-background-color: rgb(45,137,239);
+    -fx-border-style:none;
+}
+.material-standard-progress-bar .track {
+    -fx-background-color: -fx-box-border, rgb(231,231,231); 
+}

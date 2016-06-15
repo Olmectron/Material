@@ -1,0 +1,61 @@
+ .combo-box .list-cell 
+{
+-fx-background: white;
+-fx-background-color: transparent;
+-fx-text-fill: -fx-text-base-color;
+-fx-padding: 3 0 2 7;
+-fx-cell-size: 1.66667em; 
+}
+.scroll-custom{
+	-fx-background-color: transparent !important;
+
+}
+    .combo-box-popup .list-view 
+{
+-fx-overflow: hidden !important; 
+-fx-background-color: white, white;
+-fx-background-insets: 0, 1;
+-fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.30), 4, 0, 0, 3.5);
+}    .combo-box-popup .list-view .list-cell 
+{
+-fx-padding: 4 0 4 5;
+
+/* No alternate highlighting */
+-fx-background-color: white;
+}
+.combo-box-popup .list-view .list-cell:filled:selected, .combo-box-popup .list-view .list-cell:filled:selected:hover 
+{
+-fx-background: -fx-accent;
+-fx-background-color: #E0E0E0;
+-fx-text-fill: -fx-selection-bar-text;
+}
+.combo-box-popup .list-view .list-cell:filled:hover 
+{
+-fx-background-color: white;
+-fx-text-fill: -fx-text-inner-color;
+}
+
+.combo-box-base  
+{
+-fx-skin: "com.sun.javafx.scene.control.skin.ComboBoxBaseSkin";
+-fx-background-color: white, white, white, white;
+-fx-background-radius: 5, 5, 4, 3;
+-fx-background-insets: 0 0 -1 0, 0, 1, 2;
+-fx-padding: 0;
+}
+.combo-box-base:hover
+{
+-fx-color: -fx-hover-base;
+}
+.combo-box-base:showing 
+{
+-fx-color: -fx-pressed-base;
+}
+.combo-box-base:focused {
+-fx-background-color: -fx-focus-color, -fx-outer-border, -fx-inner-border, -fx-body-color;
+-fx-background-radius: 6.4, 4, 5, 3;
+-fx-background-insets: -1.4, 0, 1, 2;
+}
+.combo-box-base:disabled {
+-fx-opacity: .4;
+}
